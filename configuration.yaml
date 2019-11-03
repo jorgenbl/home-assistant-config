@@ -1,6 +1,21 @@
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
-default_config:
+#default_config:
+
+
+homeassistant:
+  name: Hjemme
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 110
+  unit_system: metric
+  time_zone: Europe/Oslo
+  auth_providers:
+    - type: homeassistant
+    - type: trusted_networks
+      trusted_networks:
+        - 192.168.64.0/23
+
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 # http:
