@@ -1,0 +1,584 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+discovery:
+  ignore:
+    - sabnzbd
+
+remote:
+  - platform: harmony
+    name: Harmony Stue
+    host: !secret harmony_stue_host
+    activity: Watch TV
+  - platform: harmony
+    name: Harmony Kjeller
+    host: !secret harmony_kjeller_host
+    activity: Watch Apple TV
+
+netatmo:
+  api_key: !secret netatmo_api_key
+  secret_key: !secret netatmo_secret_key
+  username: !secret netatmo_username
+  password: !secret netatmo_password
+  
+vacuum:
+  - platform: xiaomi_miio
+    host: !secret xiaomi_vacuum_host
+    token: !secret xiaomi_vacuum_token
+    
+ring:
+  username: !secret ring_username
+  password: !secret ring_password
+
+tibber:
+  access_token: !secret tibber_access_token
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+sensor:
+
+  # Weather prediction
+
+  - platform: yr
+
+  # Ring Doorbel
+  - platform: ring
+    monitored_conditions:
+      - battery
+      - last_activity
+      - last_ding
+      - last_motion
+      - volume
+
+  # Logicmachine via mqtt
+
+  # KNX Temperatures
+  
+  - platform: mqtt
+    state_topic: '0/0/9'
+    name: "Gang Romsensor"
+    unit_of_measurement: '°C'
+  
+  - platform: mqtt
+    state_topic: '0/0/5'
+    name: "Kjøkken Gulvsensor"
+    unit_of_measurement: '°C'
+  
+  - platform: mqtt
+    state_topic: '0/0/7'
+    name: "Gang Gulvsensor"
+    unit_of_measurement: '°C'
+  
+  - platform: mqtt
+    state_topic: '0/0/8'
+    name: "Stue Gulvsensor"
+    unit_of_measurement: '°C'
+  
+  - platform: mqtt
+    state_topic: '0/0/2'
+    name: "Bad Kjeller Sensor"
+    unit_of_measurement: '°C'
+  
+  - platform: mqtt
+    state_topic: '0/0/1'
+    name: "Bad 2 Etasje Sensor"
+    unit_of_measurement: '°C'
+  
+  - platform: mqtt
+    state_topic: '0/0/6'
+    name: "Stue Romsensor"
+    unit_of_measurement: '°C'
+  
+  - platform: mqtt
+    state_topic: '0/0/3'
+    name: "Kjøkken Romsensor"
+    unit_of_measurement: '°C'
+  
+  - platform: mqtt
+    state_topic: '0/0/4'
+    name: "Kjeller sensor"
+    unit_of_measurement: '°C'
+  
+  # KNX Thermostats
+
+  - platform: mqtt
+    state_topic: '0/1/1'
+    name: "Kjøkken Termostat Ingang"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/2/4'
+    name: "Kjøkken Termostat"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/1/2'
+    name: "Gang 1 etasje Termostat Ingang"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/2/5'
+    name: "Gang 1 etasje Termostat"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/1/0'
+    name: "Stue Termostat Ingang"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/2/3'
+    name: "Stue Termostat"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/1/5'
+    name: "Kjeller Termostat Ingang"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/2/2'
+    name: "Kjeller Termostat"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/1/4'
+    name: "Bad Kjeller Termostat Ingang"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/2/1'
+    name: "Bad Kjeller Termostat"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/1/3'
+    name: "Bad 2 etasje Termostat Ingang"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/2/0'
+    name: "Bad 2 etasje Termostat"
+    unit_of_measurement: '°C'
+
+
+input_boolean:
+  l_stue_dice_wall:
+  l_stue_dice_left:
+  l_stue_dice_right:
+  l_stue_tv:
+  l_stue_vindu:
+  l_stue_peis:
+  l_stue_kjellergang:
+  l_kjeller_trapp:
+  l_kjokken_kjokkenbenk:
+  l_kjokken_vindu:
+  l_kjokken_tak:
+  l_kjokken_skap:
+  l_1etasje_gang:
+  l_2etasje_gang:
+  l_veranda:
+
+input_number:
+  l_stue_dice_wall:
+    min: 0
+    max: 255
+  l_stue_dice_left:
+    min: 0
+    max: 255
+  l_stue_dice_right:
+    min: 0
+    max: 255
+  l_stue_tv:
+    min: 0
+    max: 255
+  l_stue_vindu:
+    min: 0
+    max: 255
+  l_stue_peis:
+    min: 0
+    max: 255
+  l_stue_kjellergang:
+    min: 0
+    max: 255
+  l_kjeller_trapp:
+    min: 0
+    max: 255
+  l_kjokken_kjokkenbenk:
+    min: 0
+    max: 255
+  l_kjokken_vindu:
+    min: 0
+    max: 255
+  l_kjokken_tak:
+    min: 0
+    max: 255
+  l_kjokken_skap:
+    min: 0
+    max: 255
+  l_1etasje_gang:
+    min: 0
+    max: 255
+  l_2etasje_gang:
+    min: 0
+    max: 255
+  l_veranda:
+    min: 0
+    max: 255
+  hvac_target_temp_livingroom:
+    name: 'Sett temperatur'
+    min: 15
+    max: 30
+    step: 1
+    initial: 21
+  hvac_target_temp_kitchen:
+    name: 'Sett temperatur'
+    min: 15
+    max: 30
+    step: 1
+    initial: 21
+  hvac_target_temp_hallway:
+    name: 'Sett temperatur'
+    min: 15
+    max: 30
+    step: 1
+    initial: 21
+  hvac_target_temp_basement:
+    name: 'Sett temperatur'
+    min: 15
+    max: 30
+    step: 1
+    initial: 21
+  hvac_target_temp_bathroom_basement:
+    name: 'Sett temperatur'
+    min: 15
+    max: 30
+    step: 1
+    initial: 21
+  hvac_target_temp_bathroom_2ndfloor:
+    name: 'Sett temperatur'
+    min: 15
+    max: 30
+    step: 1
+    initial: 21
+
+climate:
+  - platform: mqtt
+    name: Kjøkken Klimakontroll
+    current_temperature_topic: 0/0/3
+    temperature_command_topic: set/lm/0/1/1
+    temperature_state_topic: 0/2/4
+    payload_on: 1
+    payload_off: 0
+    action_topic: 0/3/5
+    action_template: >-
+      {% if states('climate.thermostat') != off %}
+        {% set actions = { 'true':'heating', 'false':'off'} %}
+        {{ actions[value] if value in actions.keys() else 'off'}}
+      {% else %}
+        off
+      {% endif %}
+    modes:
+    swing_modes:
+    fan_modes:
+  - platform: mqtt
+    name: Stue Klimakontroll
+    current_temperature_topic: 0/0/6
+    temperature_command_topic: set/lm/0/1/0
+    temperature_state_topic: 0/2/3
+    payload_on: 1
+    payload_off: 0
+    action_topic: 0/3/4
+    action_template: >-
+      {% if states('climate.thermostat') != off %}
+        {% set actions = { 'true':'heating', 'false':'off'} %}
+        {{ actions[value] if value in actions.keys() else 'off'}}
+      {% else %}
+        off
+      {% endif %}
+    modes:
+    swing_modes:
+    fan_modes:
+  - platform: mqtt
+    name: Kjeller Klimakontroll
+    current_temperature_topic: 0/0/4
+    temperature_command_topic: set/lm/0/1/5
+    temperature_state_topic: 0/2/2
+    payload_on: 1
+    payload_off: 0
+    action_topic: 0/3/2
+    action_template: >-
+      {% if states('climate.thermostat') != off %}
+        {% set actions = { 'true':'heating', 'false':'off'} %}
+        {{ actions[value] if value in actions.keys() else 'off'}}
+      {% else %}
+        off
+      {% endif %}
+    modes:
+    swing_modes:
+    fan_modes:
+  - platform: mqtt
+    name: Bad Kjeller Klimakontroll
+    current_temperature_topic: 0/0/2
+    temperature_command_topic: set/lm/0/1/4
+    temperature_state_topic: 0/2/1
+    payload_on: 1
+    payload_off: 0
+    action_topic: 0/3/1
+    action_template: >-
+      {% if states('climate.thermostat') != off %}
+        {% set actions = { 'true':'heating', 'false':'off'} %}
+        {{ actions[value] if value in actions.keys() else 'off'}}
+      {% else %}
+        off
+      {% endif %}
+    modes:
+    swing_modes:
+    fan_modes:
+  - platform: mqtt
+    name: Bad 2 etasje Klimakontroll
+    current_temperature_topic: 0/0/1
+    temperature_command_topic: set/lm/0/1/3
+    temperature_state_topic: 0/2/0
+    payload_on: 1
+    payload_off: 0
+    action_topic: 0/3/0
+    action_template: >-
+      {% if states('climate.thermostat') != off %}
+        {% set actions = { 'true':'heating', 'false':'off'} %}
+        {{ actions[value] if value in actions.keys() else 'off'}}
+      {% else %}
+        off
+      {% endif %}
+    modes:
+    swing_modes:
+    fan_modes:
+  - platform: mqtt
+    name: Gang 1 etasje Klimakontroll
+    current_temperature_topic: 0/0/9
+    temperature_command_topic: set/lm/0/1/2
+    temperature_state_topic: 0/2/5
+    payload_on: 1
+    payload_off: 0
+    action_topic: 0/3/3
+    action_template: >-
+      {% if states('climate.thermostat') != off %}
+        {% set actions = { 'true':'heating', 'false':'off'} %}
+        {{ actions[value] if value in actions.keys() else 'off'}}
+      {% else %}
+        off
+      {% endif %}
+    modes:
+    swing_modes:
+    fan_modes:
+
+light:
+  - platform: template
+    lights:
+      l_stue_dice_wall:
+        friendly_name: "Dice Wall"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_stue_dice_wall
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_stue_dice_wall
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_stue_dice_wall
+      l_stue_dice_left:
+        friendly_name: "Dice Left"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_stue_dice_left
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_stue_dice_left
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_stue_dice_left
+      l_stue_dice_right:
+        friendly_name: "Dice Right"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_stue_dice_right
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_stue_dice_right
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_stue_dice_right
+      l_stue_tv:
+        friendly_name: "TV"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_stue_tv
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_stue_tv
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_stue_tv
+      l_stue_vindu:
+        friendly_name: "Vindu"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_stue_vindu
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_stue_vindu
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_stue_vindu
+      l_stue_peis:
+        friendly_name: "Peis"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_stue_peis
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_stue_peis
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_stue_peis
+      l_stue_kjellergang:
+        friendly_name: "Kjellergang"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_stue_kjellergang
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_stue_kjellergang
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_stue_kjellergang
+      l_kjeller_trapp:
+        friendly_name: "Trapp"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_kjeller_trapp
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_kjeller_trapp
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_kjeller_trapp
+      l_kjokken_kjokkenbenk:
+        friendly_name: "Kjøkkenbenk"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_kjokken_kjokkenbenk
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_kjokken_kjokkenbenk
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_kjokken_kjokkenbenk
+      l_kjokken_vindu:
+        friendly_name: "Vindu"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_kjokken_vindu
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_kjokken_vindu
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_kjokken_vindu
+      l_kjokken_tak:
+        friendly_name: "Tak"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_kjokken_tak
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_kjokken_tak
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_kjokken_tak
+      l_kjokken_skap:
+        friendly_name: "Skap"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_kjokken_skap
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_kjokken_skap
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_kjokken_skap
+      l_1etasje_gang:
+        friendly_name: "Gang"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_1etasje_gang
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_1etasje_gang
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_1etasje_gang
+      l_2etasje_gang:
+        friendly_name: "Gang"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_2etasje_gang
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_2etasje_gang
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_2etasje_gang
+      l_veranda:
+        friendly_name: "Veranda"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_veranda
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_veranda
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_veranda
+            

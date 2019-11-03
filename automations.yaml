@@ -1,0 +1,65 @@
+- id: target_temp_livingroom
+  alias: 'Set livingroom thermostat temperature based on input_number'
+  trigger:
+    platform: state
+    entity_id: input_number.hvac_target_temp_livingroom
+  action:
+    service: climate.set_temperature
+    entity_id: climate.stue_klimakontroll
+    data_template:
+      temperature: "{{ states('input_number.hvac_target_temp_livingroom') }}"
+      
+- id: target_temp_kitchen
+  alias: 'Set kitchen thermostat temperature based on input_number'
+  trigger:
+    platform: state
+    entity_id: input_number.hvac_target_temp_kitchen
+  action:
+    service: climate.set_temperature
+    entity_id: climate.kjkken_klimakontroll
+    data_template:
+      temperature: "{{ states('input_number.hvac_target_temp_kitchen') }}"
+      
+- id: target_temp_hallway
+  alias: 'Set hallway thermostat temperature based on input_number'
+  trigger:
+    platform: state
+    entity_id: input_number.hvac_target_temp_hallway
+  action:
+    service: climate.set_temperature
+    entity_id: climate.gang_1_etasje_klimakontroll
+    data_template:
+      temperature: "{{ states('input_number.hvac_target_temp_hallway') }}"
+      
+- id: target_temp_basement
+  alias: 'Set basement thermostat temperature based on input_number'
+  trigger:
+    platform: state
+    entity_id: input_number.hvac_target_temp_basement
+  action:
+    service: climate.set_temperature
+    entity_id: climate.kjeller_klimakontroll
+    data_template:
+      temperature: "{{ states('input_number.hvac_target_temp_basement') }}"
+      
+- id: target_temp_bathroom_basement
+  alias: 'Set bathroom basement thermostat temperature based on input_number'
+  trigger:
+    platform: state
+    entity_id: input_number.hvac_target_temp_bathroom_basement
+  action:
+    service: climate.set_temperature
+    entity_id: climate.bad_kjeller_klimakontroll
+    data_template:
+      temperature: "{{ states('input_number.hvac_target_temp_bathroom_basement') }}"
+      
+- id: target_temp_bathroom_2ndfloor
+  alias: 'Set kitchen thermostat temperature based on input_number'
+  trigger:
+    platform: state
+    entity_id: input_number.hvac_target_temp_bathroom_2ndfloor
+  action:
+    service: climate.set_temperature
+    entity_id: climate.bad_2_etasje_klimakontroll
+    data_template:
+      temperature: "{{ states('input_number.hvac_target_temp_bathroom_2ndfloor') }}"
