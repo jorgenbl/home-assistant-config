@@ -12,6 +12,13 @@ homeassistant:
         - 192.168.64.0/23
   packages: !include_dir_named components
 
+lovelace:
+  mode: yaml
+
+config:
+updater:
+system_health:
+sun:
 
 discovery:
   ignore:
