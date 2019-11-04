@@ -5,4 +5,3 @@ logbook:
       - switch
       - light
       - climate
-  exclude:
