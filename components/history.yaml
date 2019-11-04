@@ -1,0 +1,8 @@
+history:
+  use_include_order: true
+  include:
+    domains:
+      - switch
+      - sensor
+      - light
+      - climate

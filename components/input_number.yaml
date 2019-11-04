@@ -1,0 +1,82 @@
+input_number:
+  l_stue_dice_wall:
+    min: 0
+    max: 255
+  l_stue_dice_left:
+    min: 0
+    max: 255
+  l_stue_dice_right:
+    min: 0
+    max: 255
+  l_stue_tv:
+    min: 0
+    max: 255
+  l_stue_vindu:
+    min: 0
+    max: 255
+  l_stue_peis:
+    min: 0
+    max: 255
+  l_stue_kjellergang:
+    min: 0
+    max: 255
+  l_kjeller_trapp:
+    min: 0
+    max: 255
+  l_kjokken_kjokkenbenk:
+    min: 0
+    max: 255
+  l_kjokken_vindu:
+    min: 0
+    max: 255
+  l_kjokken_tak:
+    min: 0
+    max: 255
+  l_kjokken_skap:
+    min: 0
+    max: 255
+  l_1etasje_gang:
+    min: 0
+    max: 255
+  l_2etasje_gang:
+    min: 0
+    max: 255
+  l_veranda:
+    min: 0
+    max: 255
+  hvac_target_temp_livingroom:
+    name: 'Sett temperatur'
+    min: 15
+    max: 30
+    step: 1
+    initial: 21
+  hvac_target_temp_kitchen:
+    name: 'Sett temperatur'
+    min: 15
+    max: 30
+    step: 1
+    initial: 21
+  hvac_target_temp_hallway:
+    name: 'Sett temperatur'
+    min: 15
+    max: 30
+    step: 1
+    initial: 21
+  hvac_target_temp_basement:
+    name: 'Sett temperatur'
+    min: 15
+    max: 30
+    step: 1
+    initial: 21
+  hvac_target_temp_bathroom_basement:
+    name: 'Sett temperatur'
+    min: 15
+    max: 30
+    step: 1
+    initial: 21
+  hvac_target_temp_bathroom_2ndfloor:
+    name: 'Sett temperatur'
+    min: 15
+    max: 30
+    step: 1
+    initial: 21

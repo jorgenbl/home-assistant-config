@@ -1,0 +1,198 @@
+light:
+  - platform: template
+    lights:
+      l_stue_dice_wall:
+        friendly_name: "Dice Wall"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_stue_dice_wall
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_stue_dice_wall
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_stue_dice_wall
+      l_stue_dice_left:
+        friendly_name: "Dice Left"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_stue_dice_left
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_stue_dice_left
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_stue_dice_left
+      l_stue_dice_right:
+        friendly_name: "Dice Right"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_stue_dice_right
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_stue_dice_right
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_stue_dice_right
+      l_stue_tv:
+        friendly_name: "TV"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_stue_tv
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_stue_tv
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_stue_tv
+      l_stue_vindu:
+        friendly_name: "Vindu"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_stue_vindu
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_stue_vindu
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_stue_vindu
+      l_stue_peis:
+        friendly_name: "Peis"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_stue_peis
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_stue_peis
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_stue_peis
+      l_stue_kjellergang:
+        friendly_name: "Kjellergang"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_stue_kjellergang
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_stue_kjellergang
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_stue_kjellergang
+      l_kjeller_trapp:
+        friendly_name: "Trapp"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_kjeller_trapp
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_kjeller_trapp
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_kjeller_trapp
+      l_kjokken_kjokkenbenk:
+        friendly_name: "Kjøkkenbenk"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_kjokken_kjokkenbenk
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_kjokken_kjokkenbenk
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_kjokken_kjokkenbenk
+      l_kjokken_vindu:
+        friendly_name: "Vindu"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_kjokken_vindu
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_kjokken_vindu
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_kjokken_vindu
+      l_kjokken_tak:
+        friendly_name: "Tak"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_kjokken_tak
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_kjokken_tak
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_kjokken_tak
+      l_kjokken_skap:
+        friendly_name: "Skap"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_kjokken_skap
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_kjokken_skap
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_kjokken_skap
+      l_1etasje_gang:
+        friendly_name: "Gang"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_1etasje_gang
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_1etasje_gang
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_1etasje_gang
+      l_2etasje_gang:
+        friendly_name: "Gang"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_2etasje_gang
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_2etasje_gang
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_2etasje_gang
+      l_veranda:
+        friendly_name: "Veranda"
+        turn_on:
+          service: input_boolean.turn_on
+          entity_id: input_boolean.l_veranda
+        turn_off:
+          service: input_boolean.turn_off
+          entity_id: input_boolean.l_veranda
+        set_level:
+          service: input_number.set_value
+          data_template:
+            value: "{{ brightness }}"
+            entity_id: input_number.l_veranda

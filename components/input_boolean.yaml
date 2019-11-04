@@ -1,0 +1,51 @@
+input_boolean:
+  home:
+    name: Hjemme
+    initial: off
+    icon: mdi:home
+
+  sleep:
+    name: Sove
+    initial: off
+    icon: mdi:sleep
+
+  vacation:
+    name: Ferie
+    initial: off
+    icon: mdi:airplane
+
+  away:
+    name: Borte
+    initial: off
+    icon: mdi:logout
+
+  day:
+    name: Dag
+    initial: off
+    icon: mdi:weather-sunny
+
+  night:
+    name: Natt
+    initial: off
+    icon: mdi:weather-night
+
+  evening:
+    name: Kveld
+    initial: off
+    icon: mdi:weather-sunset
+
+  l_stue_dice_wall:
+  l_stue_dice_left:
+  l_stue_dice_right:
+  l_stue_tv:
+  l_stue_vindu:
+  l_stue_peis:
+  l_stue_kjellergang:
+  l_kjeller_trapp:
+  l_kjokken_kjokkenbenk:
+  l_kjokken_vindu:
+  l_kjokken_tak:
+  l_kjokken_skap:
+  l_1etasje_gang:
+  l_2etasje_gang:
+  l_veranda:

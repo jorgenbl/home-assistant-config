@@ -1,0 +1,125 @@
+sensor:
+
+  # Weather prediction
+
+  - platform: yr
+
+  # Ring Doorbel
+  - platform: ring
+    monitored_conditions:
+      - battery
+      - last_activity
+      - last_ding
+      - last_motion
+      - volume
+
+  # Logicmachine via mqtt
+
+  # KNX Temperatures
+  
+  - platform: mqtt
+    state_topic: '0/0/9'
+    name: "Gang Romsensor"
+    unit_of_measurement: '°C'
+  
+  - platform: mqtt
+    state_topic: '0/0/5'
+    name: "Kjøkken Gulvsensor"
+    unit_of_measurement: '°C'
+  
+  - platform: mqtt
+    state_topic: '0/0/7'
+    name: "Gang Gulvsensor"
+    unit_of_measurement: '°C'
+  
+  - platform: mqtt
+    state_topic: '0/0/8'
+    name: "Stue Gulvsensor"
+    unit_of_measurement: '°C'
+  
+  - platform: mqtt
+    state_topic: '0/0/2'
+    name: "Bad Kjeller Sensor"
+    unit_of_measurement: '°C'
+  
+  - platform: mqtt
+    state_topic: '0/0/1'
+    name: "Bad 2 Etasje Sensor"
+    unit_of_measurement: '°C'
+  
+  - platform: mqtt
+    state_topic: '0/0/6'
+    name: "Stue Romsensor"
+    unit_of_measurement: '°C'
+  
+  - platform: mqtt
+    state_topic: '0/0/3'
+    name: "Kjøkken Romsensor"
+    unit_of_measurement: '°C'
+  
+  - platform: mqtt
+    state_topic: '0/0/4'
+    name: "Kjeller sensor"
+    unit_of_measurement: '°C'
+  
+  # KNX Thermostats
+
+  - platform: mqtt
+    state_topic: '0/1/1'
+    name: "Kjøkken Termostat Ingang"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/2/4'
+    name: "Kjøkken Termostat"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/1/2'
+    name: "Gang 1 etasje Termostat Ingang"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/2/5'
+    name: "Gang 1 etasje Termostat"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/1/0'
+    name: "Stue Termostat Ingang"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/2/3'
+    name: "Stue Termostat"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/1/5'
+    name: "Kjeller Termostat Ingang"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/2/2'
+    name: "Kjeller Termostat"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/1/4'
+    name: "Bad Kjeller Termostat Ingang"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/2/1'
+    name: "Bad Kjeller Termostat"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/1/3'
+    name: "Bad 2 etasje Termostat Ingang"
+    unit_of_measurement: '°C'
+
+  - platform: mqtt
+    state_topic: '0/2/0'
+    name: "Bad 2 etasje Termostat"
+    unit_of_measurement: '°C'

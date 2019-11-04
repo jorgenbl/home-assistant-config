@@ -1,0 +1,109 @@
+climate:
+  - platform: mqtt
+    name: Kjøkken Klimakontroll
+    current_temperature_topic: 0/0/3
+    temperature_command_topic: set/lm/0/1/1
+    temperature_state_topic: 0/2/4
+    payload_on: 1
+    payload_off: 0
+    action_topic: 0/3/5
+    action_template: >-
+      {% if states('climate.thermostat') != off %}
+        {% set actions = { 'true':'heating', 'false':'off'} %}
+        {{ actions[value] if value in actions.keys() else 'off'}}
+      {% else %}
+        off
+      {% endif %}
+    modes:
+    swing_modes:
+    fan_modes:
+  - platform: mqtt
+    name: Stue Klimakontroll
+    current_temperature_topic: 0/0/6
+    temperature_command_topic: set/lm/0/1/0
+    temperature_state_topic: 0/2/3
+    payload_on: 1
+    payload_off: 0
+    action_topic: 0/3/4
+    action_template: >-
+      {% if states('climate.thermostat') != off %}
+        {% set actions = { 'true':'heating', 'false':'off'} %}
+        {{ actions[value] if value in actions.keys() else 'off'}}
+      {% else %}
+        off
+      {% endif %}
+    modes:
+    swing_modes:
+    fan_modes:
+  - platform: mqtt
+    name: Kjeller Klimakontroll
+    current_temperature_topic: 0/0/4
+    temperature_command_topic: set/lm/0/1/5
+    temperature_state_topic: 0/2/2
+    payload_on: 1
+    payload_off: 0
+    action_topic: 0/3/2
+    action_template: >-
+      {% if states('climate.thermostat') != off %}
+        {% set actions = { 'true':'heating', 'false':'off'} %}
+        {{ actions[value] if value in actions.keys() else 'off'}}
+      {% else %}
+        off
+      {% endif %}
+    modes:
+    swing_modes:
+    fan_modes:
+  - platform: mqtt
+    name: Bad Kjeller Klimakontroll
+    current_temperature_topic: 0/0/2
+    temperature_command_topic: set/lm/0/1/4
+    temperature_state_topic: 0/2/1
+    payload_on: 1
+    payload_off: 0
+    action_topic: 0/3/1
+    action_template: >-
+      {% if states('climate.thermostat') != off %}
+        {% set actions = { 'true':'heating', 'false':'off'} %}
+        {{ actions[value] if value in actions.keys() else 'off'}}
+      {% else %}
+        off
+      {% endif %}
+    modes:
+    swing_modes:
+    fan_modes:
+  - platform: mqtt
+    name: Bad 2 etasje Klimakontroll
+    current_temperature_topic: 0/0/1
+    temperature_command_topic: set/lm/0/1/3
+    temperature_state_topic: 0/2/0
+    payload_on: 1
+    payload_off: 0
+    action_topic: 0/3/0
+    action_template: >-
+      {% if states('climate.thermostat') != off %}
+        {% set actions = { 'true':'heating', 'false':'off'} %}
+        {{ actions[value] if value in actions.keys() else 'off'}}
+      {% else %}
+        off
+      {% endif %}
+    modes:
+    swing_modes:
+    fan_modes:
+  - platform: mqtt
+    name: Gang 1 etasje Klimakontroll
+    current_temperature_topic: 0/0/9
+    temperature_command_topic: set/lm/0/1/2
+    temperature_state_topic: 0/2/5
+    payload_on: 1
+    payload_off: 0
+    action_topic: 0/3/3
+    action_template: >-
+      {% if states('climate.thermostat') != off %}
+        {% set actions = { 'true':'heating', 'false':'off'} %}
+        {{ actions[value] if value in actions.keys() else 'off'}}
+      {% else %}
+        off
+      {% endif %}
+    modes:
+    swing_modes:
+    fan_modes:
