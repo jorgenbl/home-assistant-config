@@ -28,4 +28,4 @@ cards:
         entity: vacuum.xiaomi_vacuum_cleaner
         name: false
       - type: custom:weather-card
-        entity: weather.met_no
+        entity: weather.hjemme
