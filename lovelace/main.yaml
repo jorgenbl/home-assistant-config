@@ -29,6 +29,18 @@ cards:
 
   - type: vertical-stack
     cards:
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: sensor.netatmo_innesensor_temperature
+            name: Stue
+            secondary_info: last-changed
+          - entity: sensor.netatmo_innesensor_co2
+            name: Stue (CO2)
+            secondary_info: last-changed
+
+  - type: vertical-stack
+    cards:
       - type: custom:xiaomi-vacuum-card
         entity: vacuum.xiaomi_vacuum_cleaner
         name: false
