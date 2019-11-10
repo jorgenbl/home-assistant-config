@@ -3,6 +3,8 @@ sensor:
   # Weather prediction
 
   - platform: yr
+    monitored_conditions:
+      - symbol
 
   # Ring Doorbel
   - platform: ring
