@@ -21,6 +21,9 @@ discovery:
   ignore:
     - sabnzbd
 
+lovelace:
+  mode: yaml
+
 frontend:
   themes: !include_dir_merge_named themes
 
