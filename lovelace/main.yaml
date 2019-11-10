@@ -1,4 +1,4 @@
-path: home
+path: Hjemme
 title: Hjem
 icon: mdi:home
 cards:
@@ -12,6 +12,11 @@ cards:
             style:
               - padding: 8px
           - entity: input_boolean.night
+            type: custom:button-card
+            icon: attribute
+            style:
+              - padding: 8px
+          - entity: input_boolean.evening
             type: custom:button-card
             icon: attribute
             style:
