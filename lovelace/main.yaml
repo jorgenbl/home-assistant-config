@@ -1,0 +1,31 @@
+path: home
+title: Hjem
+icon: mdi:home
+cards:
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - entity: input_boolean.day
+            type: custom:button-card
+            icon: attribute
+            style:
+              - padding: 8px
+          - entity: input_boolean.night
+            type: custom:button-card
+            icon: attribute
+            style:
+              - padding: 8px
+          - entity: input_boolean.evening
+            type: custom:button-card
+            icon: attribute
+            style:
+              - padding: 8px
+
+  - type: vertical-stack
+    cards:
+      - type: custom:xiaomi-vacuum-card
+        entity: vacuum.xiaomi_vacuum_cleaner
+        name: false
+      - type: custom:weather-card
+        entity: weather.met_no
