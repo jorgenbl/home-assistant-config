@@ -21,6 +21,16 @@ cards:
             icon: attribute
             style:
               - padding: 8px
+      - type: entity-button
+        entity: remote.harmony_stue
+        name: TV
+        tap_action:
+          action: call-service
+          service: remote.turn_on
+          service_data:
+            activity: "Watch TV"
+            entity_id: remote.harmony_stue
+
 
   - type: vertical-stack
     cards:
@@ -30,12 +40,22 @@ cards:
           - entity: sensor.netatmo_innesensor_temperature
             name: Stue
             secondary_info: last-changed
-          - entity: sensor.netatmo_innesensor_co2
-            name: Stue (CO2)
-            secondary_info: last-changed
           - entity: sensor.netatmo_ute_temperature
             name: Ute
             secondary_info: last-changed
+          - entity: sensor.netatmo_kjeller_temperature
+            name: Kjeller
+            secondary_info: last-changed
+          - entity: sensor.netatmo_soverom_madelen_temperature
+            name: Soverom
+            secondary_info: last-changed
+          - entity: sensor.netatmo_soverom_madelen_temperature
+            name: Soverom Madelen
+            secondary_info: last-changed
+          - entity: sensor.netatmo_soverom_vilde_temperature
+            name: Soverom Vilde
+            secondary_info: last-changed
+
 
   - type: vertical-stack
     cards:
@@ -43,7 +63,7 @@ cards:
         entity: vacuum.xiaomi_vacuum_cleaner
         name: false
       - type: history-graph
-        hours_to_show: 48
+        hours_to_show: 80
         entities:
           - entity: sensor.real_time_consumption_svaneveien_25_d
             name: Strømforbruk
