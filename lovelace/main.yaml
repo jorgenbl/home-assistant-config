@@ -21,11 +21,6 @@ cards:
             icon: attribute
             style:
               - padding: 8px
-          - entity: input_boolean.evening
-            type: custom:button-card
-            icon: attribute
-            style:
-              - padding: 8px
 
   - type: vertical-stack
     cards:

@@ -18,6 +18,7 @@ node-red
 *.DS_Store
 *.pickle
 
+.HA_VERSION
 .idea
 .cloud
 .storage
