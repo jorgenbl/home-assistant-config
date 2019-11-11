@@ -79,7 +79,7 @@ cards:
           - entity: sensor.netatmo_kjeller_temperature
             name: Kjeller
             secondary_info: last-changed
-          - entity: sensor.netatmo_soverom_madelen_temperature
+          - entity: sensor.netatmo_kjeller_temperature
             name: Soverom
             secondary_info: last-changed
           - entity: sensor.netatmo_soverom_madelen_temperature
