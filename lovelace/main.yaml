@@ -23,32 +23,45 @@ cards:
               - padding: 8px
       - type: horizontal-stack
         cards:
-          - type: custom:button-card
+          - type: entity-button
             entity: remote.harmony_stue
             name: TV
+            icon: mdi:television-classic
             tap_action:
               action: call-service
               service: remote.turn_on
               service_data:
                 activity: "Watch TV"
                 entity_id: remote.harmony_stue
-          - type: custom:button-card
+          - type: entity-button
             entity: remote.harmony_stue
             name: Apple TV
+            icon: mdi:apple
             tap_action:
               action: call-service
               service: remote.turn_on
               service_data:
                 activity: "Watch Apple TV"
                 entity_id: remote.harmony_stue
-          - type: custom:button-card
+          - type: entity-button
             entity: remote.harmony_stue
             name: Chromecast
+            icon: mdi:google-chrome
             tap_action:
               action: call-service
               service: remote.turn_on
               service_data:
                 activity: "Watch Chromecast"
+                entity_id: remote.harmony_stue
+          - type: entity-button
+            entity: remote.harmony_stue
+            name: "Off"
+            icon: mdi:television-off
+            tap_action:
+              action: call-service
+              service: remote.turn_on
+              service_data:
+                activity: "PowerOff"
                 entity_id: remote.harmony_stue
 
 
