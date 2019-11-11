@@ -17,6 +17,7 @@ config:
 updater:
 system_health:
 sun:
+mobile_app:
 
 discovery:
   ignore:

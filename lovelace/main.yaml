@@ -11,12 +11,12 @@ cards:
             icon: attribute
             style:
               - padding: 8px
-          - entity: input_boolean.night
+          - entity: input_boolean.evening
             type: custom:button-card
             icon: attribute
             style:
               - padding: 8px
-          - entity: input_boolean.evening
+          - entity: input_boolean.night
             type: custom:button-card
             icon: attribute
             style:
@@ -63,6 +63,10 @@ cards:
               service_data:
                 activity: "PowerOff"
                 entity_id: remote.harmony_stue
+      - type: custom:mini-media-player
+        entity: media_player.stue
+        hide:
+         icon: true
 
 
   - type: vertical-stack
