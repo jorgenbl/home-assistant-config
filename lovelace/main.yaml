@@ -30,6 +30,24 @@ cards:
           service_data:
             activity: "Watch TV"
             entity_id: remote.harmony_stue
+      - type: entity-button
+        entity: remote.harmony_stue
+        name: Apple TV
+        tap_action:
+          action: call-service
+          service: remote.turn_on
+          service_data:
+            activity: "Watch Apple TV"
+            entity_id: remote.harmony_stue
+      - type: entity-button
+        entity: remote.harmony_stue
+        name: Chromecast
+        tap_action:
+          action: call-service
+          service: remote.turn_on
+          service_data:
+            activity: "Watch Chromecast"
+            entity_id: remote.harmony_stue
 
 
   - type: vertical-stack
