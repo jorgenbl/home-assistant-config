@@ -10,7 +10,8 @@ homeassistant:
     - type: trusted_networks
       trusted_networks:
         - 192.168.64.0/23
-      allow_bypass_login: true
+      trusted_users:
+        192.168.64.0/23: !secret cast_userid
   customize: !include_dir_merge_named customize
   packages: !include_dir_named components
 
