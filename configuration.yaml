@@ -10,6 +10,7 @@ homeassistant:
     - type: trusted_networks
       trusted_networks:
         - 192.168.64.0/23
+        - 192.168.64.123
   customize: !include_dir_merge_named customize
   packages: !include_dir_named components
 
