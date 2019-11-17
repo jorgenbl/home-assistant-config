@@ -1,108 +1,111 @@
-path: Hjemme
+path: home
 title: Hjem
 icon: mdi:home
+panel: true
 cards:
-  - type: vertical-stack
+  - type: horizontal-stack
     cards:
-      - type: horizontal-stack
+      - type: vertical-stack
         cards:
-          - entity: input_boolean.day
-            type: custom:button-card
-            icon: attribute
-            style:
-              - padding: 8px
-          - entity: input_boolean.evening
-            type: custom:button-card
-            icon: attribute
-            style:
-              - padding: 8px
-          - entity: input_boolean.night
-            type: custom:button-card
-            icon: attribute
-            style:
-              - padding: 8px
-      - type: horizontal-stack
+          - type: horizontal-stack
+            cards:
+              - entity: input_boolean.day
+                type: custom:button-card
+                icon: attribute
+                style:
+                  - padding: 8px
+              - entity: input_boolean.evening
+                type: custom:button-card
+                icon: attribute
+                style:
+                  - padding: 8px
+              - entity: input_boolean.night
+                type: custom:button-card
+                icon: attribute
+                style:
+                  - padding: 8px
+          - type: horizontal-stack
+            cards:
+              - type: entity-button
+                entity: remote.harmony_stue
+                name: TV
+                icon: mdi:television-classic
+                tap_action:
+                  action: call-service
+                  service: remote.turn_on
+                  service_data:
+                    activity: "Watch TV"
+                    entity_id: remote.harmony_stue
+              - type: entity-button
+                entity: remote.harmony_stue
+                name: Apple TV
+                icon: mdi:apple
+                tap_action:
+                  action: call-service
+                  service: remote.turn_on
+                  service_data:
+                    activity: "Watch Apple TV"
+                    entity_id: remote.harmony_stue
+              - type: entity-button
+                entity: remote.harmony_stue
+                name: Chromecast
+                icon: mdi:google-chrome
+                tap_action:
+                  action: call-service
+                  service: remote.turn_on
+                  service_data:
+                    activity: "Watch Chromecast"
+                    entity_id: remote.harmony_stue
+              - type: entity-button
+                entity: remote.harmony_stue
+                name: "Off"
+                icon: mdi:television-off
+                tap_action:
+                  action: call-service
+                  service: remote.turn_on
+                  service_data:
+                    activity: "PowerOff"
+                    entity_id: remote.harmony_stue
+          - type: custom:mini-media-player
+            entity: media_player.stue
+            hide:
+             icon: true
+
+
+      - type: vertical-stack
         cards:
-          - type: entity-button
-            entity: remote.harmony_stue
-            name: TV
-            icon: mdi:television-classic
-            tap_action:
-              action: call-service
-              service: remote.turn_on
-              service_data:
-                activity: "Watch TV"
-                entity_id: remote.harmony_stue
-          - type: entity-button
-            entity: remote.harmony_stue
-            name: Apple TV
-            icon: mdi:apple
-            tap_action:
-              action: call-service
-              service: remote.turn_on
-              service_data:
-                activity: "Watch Apple TV"
-                entity_id: remote.harmony_stue
-          - type: entity-button
-            entity: remote.harmony_stue
-            name: Chromecast
-            icon: mdi:google-chrome
-            tap_action:
-              action: call-service
-              service: remote.turn_on
-              service_data:
-                activity: "Watch Chromecast"
-                entity_id: remote.harmony_stue
-          - type: entity-button
-            entity: remote.harmony_stue
-            name: "Off"
-            icon: mdi:television-off
-            tap_action:
-              action: call-service
-              service: remote.turn_on
-              service_data:
-                activity: "PowerOff"
-                entity_id: remote.harmony_stue
-      - type: custom:mini-media-player
-        entity: media_player.stue
-        hide:
-         icon: true
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - entity: sensor.netatmo_innesensor_temperature
+                name: Stue
+                secondary_info: last-changed
+              - entity: sensor.netatmo_ute_temperature
+                name: Ute
+                secondary_info: last-changed
+              - entity: sensor.netatmo_kjeller_temperature
+                name: Kjeller
+                secondary_info: last-changed
+              - entity: sensor.netatmo_kjeller_temperature
+                name: Soverom
+                secondary_info: last-changed
+              - entity: sensor.netatmo_soverom_madelen_temperature
+                name: Soverom Madelen
+                secondary_info: last-changed
+              - entity: sensor.netatmo_soverom_vilde_temperature
+                name: Soverom Vilde
+                secondary_info: last-changed
 
 
-  - type: vertical-stack
-    cards:
-      - type: entities
-        show_header_toggle: false
-        entities:
-          - entity: sensor.netatmo_innesensor_temperature
-            name: Stue
-            secondary_info: last-changed
-          - entity: sensor.netatmo_ute_temperature
-            name: Ute
-            secondary_info: last-changed
-          - entity: sensor.netatmo_kjeller_temperature
-            name: Kjeller
-            secondary_info: last-changed
-          - entity: sensor.netatmo_kjeller_temperature
-            name: Soverom
-            secondary_info: last-changed
-          - entity: sensor.netatmo_soverom_madelen_temperature
-            name: Soverom Madelen
-            secondary_info: last-changed
-          - entity: sensor.netatmo_soverom_vilde_temperature
-            name: Soverom Vilde
-            secondary_info: last-changed
-
-
-  - type: vertical-stack
-    cards:
-      - type: custom:xiaomi-vacuum-card
-        entity: vacuum.xiaomi_vacuum_cleaner
-        name: false
-      - type: history-graph
-        hours_to_show: 80
-        entities:
-          - entity: sensor.real_time_consumption_svaneveien_25_d
-            name: Strømforbruk
-      - type: custom:weather-card
-        entity: weather.hjemme
+      - type: vertical-stack
+        cards:
+          - type: custom:xiaomi-vacuum-card
+            entity: vacuum.xiaomi_vacuum_cleaner
+            name: false
+          - type: history-graph
+            hours_to_show: 80
+            entities:
+              - entity: sensor.real_time_consumption_svaneveien_25_d
+                name: Strømforbruk
+          - type: custom:weather-card
+            entity: weather.hjemme

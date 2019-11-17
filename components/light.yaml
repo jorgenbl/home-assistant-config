@@ -196,3 +196,12 @@ light:
           data_template:
             value: "{{ brightness }}"
             entity_id: input_number.l_veranda
+
+
+light:
+  - platform: group
+    name: Soverom Lys
+    entities:
+      - light.soverom_jb_spot_1
+      - light.soverom_jb_spot_2
+      - light.soverom_jb_spot_3
