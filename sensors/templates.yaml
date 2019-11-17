@@ -1,0 +1,104 @@
+- platform: template
+  sensors:
+    template_door_alarm:
+      friendly_name: 'Verisure Alarm'
+      icon_template: >
+        {% if is_state("alarm_control_panel.svaneveien_alarm", "disarmed") %} mdi:shield-off
+        {% elif is_state("alarm_control_panel.svaneveien_alarm", "armed_home") %} mdi:shield-home-outline
+        {% else %} mdi:shield-home
+        {% endif %}
+      value_template: >
+        {% if is_state("alarm_control_panel.svaneveien_alarm", "disarmed") %}Av
+        {% elif is_state("alarm_control_panel.svaneveien_alarm", "armed_home") %}Skallmodus
+        {% else %}På
+        {% endif %}
+    template_magnet_door_main:
+      friendly_name: 'Ytterdør'
+      icon_template: >
+        {% if is_state("binary_sensor.hoveddor", "off") %} mdi:door-closed
+        {% else %} mdi:door-open
+        {% endif %}
+      value_template: >
+        {% if is_state("binary_sensor.hoveddor", "off") %}Lukket
+        {% else %}Åpen!
+        {% endif %}
+    template_magnet_door_basement:
+      friendly_name: 'Kjellerdør'
+      icon_template: >
+        {% if is_state("binary_sensor.kjellerdor", "off") %} mdi:door-closed
+        {% else %} mdi:door-open
+        {% endif %}
+      value_template: >
+        {% if is_state("binary_sensor.kjellerdor", "off") %}Lukket
+        {% else %}Åpen!
+        {% endif %}
+    template_magnet_door_livingroom:
+      friendly_name: 'Stuedør'
+      icon_template: >
+        {% if is_state("binary_sensor.stuedor", "off") %} mdi:door-closed
+        {% else %} mdi:door-open
+        {% endif %}
+      value_template: >
+        {% if is_state("binary_sensor.stuedor", "off") %}Lukket
+        {% else %}Åpen!
+        {% endif %}
+    template_magnet_window_kitchen_left:
+      friendly_name: 'Kjøkkenvindu venstre'
+      icon_template: >
+        {% if is_state("binary_sensor.kjokkenvindu_venstre", "off") %} mdi:window-closed-variant
+        {% else %} mdi:window-open-variant
+        {% endif %}
+      value_template: >
+        {% if is_state("binary_sensor.kjokkenvindu_venstre", "off") %}Lukket
+        {% else %}Åpen!
+        {% endif %}
+    template_magnet_window_kitchen_right:
+      friendly_name: 'Kjøkkenvindu høyre'
+      icon_template: >
+        {% if is_state("binary_sensor.kjokkenvindu_hoyre", "off") %} mdi:window-closed-variant
+        {% else %} mdi:window-open-variant
+        {% endif %}
+      value_template: >
+        {% if is_state("binary_sensor.kjokkenvindu_hoyre", "off") %}Lukket
+        {% else %}Åpen!
+        {% endif %}
+    template_magnet_window_livingroom:
+      friendly_name: 'Stuevindu'
+      icon_template: >
+        {% if is_state("binary_sensor.stuevindu", "off") %} mdi:window-closed-variant
+        {% else %} mdi:window-open-variant
+        {% endif %}
+      value_template: >
+        {% if is_state("binary_sensor.stuevindu", "off") %}Lukket
+        {% else %}Åpen!
+        {% endif %}
+
+    count_binary_sensor:
+      entity_id: sensor.date
+      friendly_name: 'Binary Sensors'
+      value_template: '{{ states.binary_sensor | list | length }}'
+
+    count_sensor:
+      entity_id: sensor.date
+      friendly_name: 'Sensors'
+      value_template: '{{ states.sensor | list | length }}'
+
+    count_switch:
+      entity_id: sensor.date
+      friendly_name: 'Switches'
+      value_template: '{{ states.switch | list | length }}'
+
+    count_light:
+      entity_id: sensor.date
+      friendly_name: 'Lights'
+      value_template: '{{ states.light | list | length }}'
+
+    count_media_player:
+      entity_id: sensor.date
+      friendly_name: 'Media Players'
+      value_template: '{{ states.media_player | list | length }}'
+
+    count_automations:
+      entity_id: sensor.date
+      friendly_name: 'Automations'
+      value_template: '{{ states.automation | list | length }}'

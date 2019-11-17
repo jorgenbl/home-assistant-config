@@ -1,0 +1,30 @@
+path: bedroom_v
+title: Soverom Vilde
+icon: mdi:bed-single
+panel: true
+cards:
+  - type: horizontal-stack # forces everything to fit in one row
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - type: custom:slider-entity-row
+                entity: light.soverom_v
+                name: Lys
+                toggle: true
+    
+      - type: vertical-stack
+        cards:
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - entity: sensor.netatmo_soverom_vilde_temperature
+                name: Temperatur
+                secondary_info: last-changed
+              - entity: sensor.netatmo_soverom_vilde_humidity
+                name: Fuktighet
+                secondary_info: last-changed
+              - entity: sensor.netatmo_soverom_vilde_co2
+                name: CO2
+                secondary_info: last-changed  

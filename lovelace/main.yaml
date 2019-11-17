@@ -24,6 +24,17 @@ cards:
                 icon: attribute
                 style:
                   - padding: 8px
+          - type: glance
+            entities:
+              - sensor.template_door_alarm
+              - sensor.template_magnet_door_main
+              - sensor.template_magnet_door_basement
+              - sensor.template_magnet_door_livingroom
+          - type: glance
+            entities:
+              - sensor.template_magnet_window_kitchen_left
+              - sensor.template_magnet_window_kitchen_right
+              - sensor.template_magnet_window_livingroom
           - type: horizontal-stack
             cards:
               - type: entity-button
@@ -69,8 +80,11 @@ cards:
           - type: custom:mini-media-player
             entity: media_player.stue
             hide:
-             icon: true
-
+              icon: true
+          - type: custom:mini-media-player
+            entity: media_player.kjokken
+            hide:
+              icon: true
 
       - type: vertical-stack
         cards:
@@ -89,23 +103,32 @@ cards:
               - entity: sensor.netatmo_kjeller_temperature
                 name: Soverom
                 secondary_info: last-changed
+              - entity: sensor.master_sov_temperature
+                name: Soverom
+                secondary_info: last-changed
               - entity: sensor.netatmo_soverom_madelen_temperature
                 name: Soverom Madelen
                 secondary_info: last-changed
               - entity: sensor.netatmo_soverom_vilde_temperature
                 name: Soverom Vilde
                 secondary_info: last-changed
+          - type: custom:weather-card
+            entity: weather.hjemme
 
 
       - type: vertical-stack
         cards:
-          - type: custom:xiaomi-vacuum-card
-            entity: vacuum.xiaomi_vacuum_cleaner
-            name: false
           - type: history-graph
             hours_to_show: 80
             entities:
               - entity: sensor.real_time_consumption_svaneveien_25_d
                 name: Strømforbruk
-          - type: custom:weather-card
-            entity: weather.hjemme
+          - type: history-graph
+            hours_to_show: 80
+            entities:
+              - entity: sensor.electricity_price_svaneveien_25_d
+                name: Strømpris
+          - type: custom:xiaomi-vacuum-card
+            entity: vacuum.xiaomi_vacuum_cleaner
+            name: false
+

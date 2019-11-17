@@ -32,7 +32,11 @@ cch:
   background: transparent url("https://goo.gl/M3Dsf2")
   options: hide
   disable_sidebar: true
+  swipe: true
 
 views:
   - !include lovelace/main.yaml
-  - !include lovelace/mainbedroom.yaml
+  - !include lovelace/bedroom.yaml
+  - !include lovelace/bedroom_madelen.yaml
+  - !include lovelace/bedroom_vilde.yaml
+  - !include lovelace/office.yaml
