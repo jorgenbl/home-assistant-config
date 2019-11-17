@@ -25,7 +25,13 @@ resources:
     type: module
   - url: /local/mini-graph-card.js?v=0.3.3
     type: module
+  - url: /local/compact-custom-header.js?v=0.0.1
+    type: module
 
+cch:
+  background: transparent url("https://goo.gl/M3Dsf2")
+  options: hide
+  disable_sidebar: true
 
 views:
   - !include lovelace/main.yaml
