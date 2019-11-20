@@ -28,6 +28,10 @@ discovery:
 lovelace:
   mode: yaml
 
+logger:
+  logs:
+    custom_components.iphonedetect: debug
+
 frontend:
   themes: !include_dir_merge_named themes
 
