@@ -10,18 +10,33 @@ cards:
           - type: entities
             entities:
               - type: custom:slider-entity-row
-                entity: light.kontor
+                entity: light.kjokken_lys
                 name: Lys
                 toggle: true
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.kjokken_romsensor
+            name: Kjøkken Romsensor
+            hours_to_show: 168
+            points_per_hour: 0.25
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.kjokken_gulvsensor
+            name: Kjøkken Gulvsensor
+            hours_to_show: 168
+            points_per_hour: 0.25
+
+      
     
       - type: vertical-stack
         cards:
-          - type: entities
-            show_header_toggle: false
-            entities:
-              - entity: sensor.kontor_temperature
-                name: Temperatur
-                secondary_info: last-changed
-              - entity: sensor.kontor_humidity
-                name: Fuktighet
-                secondary_info: last-changed
+          - type: custom:layout-card
+            cards:
+              - type: 'custom:mini-media-player'
+                entity: media_player.kjokken
+                icon: 'mdi:radio'
+                name: Kjøkken Radio
+                info: true
+                show_progress: true
+                artwork: full-cover-fit
+                source: true

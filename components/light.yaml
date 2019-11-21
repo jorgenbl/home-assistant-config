@@ -196,3 +196,19 @@ light:
           data_template:
             value: "{{ brightness }}"
             entity_id: input_number.l_veranda
+
+  - platform: group
+    name: Kjokken Lys
+    entities:
+      - light.l_kjokken_kjokkenbenk
+      - light.l_kjokken_skap
+      - light.l_kjokken_tak
+      - light.l_kjokken_vindu
+
+  - platform: group
+    name: Stue Lys
+    entities:
+      - light.l_stue_vindu
+      - light.l_stue_kjellergang
+      - light.l_stue_tv
+      - light.l_stue_peis

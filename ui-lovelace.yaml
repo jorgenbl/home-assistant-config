@@ -17,6 +17,8 @@ resources:
     type: module
   - url: /community_plugin/lovelace-slider-entity-row/slider-entity-row.js
     type: module
+  - url: /community_plugin/lovelace-layout-card/layout-card.js
+    type: module
 
 cch:
   background: transparent url("https://goo.gl/M3Dsf2")
@@ -26,6 +28,8 @@ cch:
 
 views:
   - !include lovelace/main.yaml
+  - !include lovelace/kitchen.yaml
+  - !include lovelace/livingroom.yaml
   - !include lovelace/bedroom.yaml
   - !include lovelace/bedroom_madelen.yaml
   - !include lovelace/bedroom_vilde.yaml

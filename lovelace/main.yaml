@@ -127,16 +127,25 @@ cards:
 
       - type: vertical-stack
         cards:
-          - type: history-graph
-            hours_to_show: 80
+          - type: custom:mini-graph-card
             entities:
               - entity: sensor.real_time_consumption_svaneveien_25_d
-                name: Strømforbruk
-          - type: history-graph
-            hours_to_show: 80
+            name: Strømforbruk
+            hours_to_show: 168
+            points_per_hour: 0.25
+            hour24: true
+            show:
+              graph: bar
+              labels: true
+          - type: custom:mini-graph-card
             entities:
-              - entity: sensor.electricity_price_svaneveien_25_d
-                name: Strømpris
+              - sensor.electricity_price_svaneveien_25_d
+            name: Strømpris
+            hours_to_show: 168
+            points_per_hour: 0.25
+            hour24: true
+            show:
+              labels: true
           - type: custom:xiaomi-vacuum-card
             entity: vacuum.xiaomi_vacuum_cleaner
             name: false

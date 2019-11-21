@@ -13,15 +13,24 @@ cards:
                 entity: light.soverom_b_j
                 name: Lys
                 toggle: true
+          - artwork: cover
+            type: 'custom:mini-media-player'
+            entity: media_player.jbl_link_20
+            icon: 'mdi:radio'
+            name: JBL Link 20
     
       - type: vertical-stack
         cards:
-          - type: entities
-            show_header_toggle: false
+          - type: custom:mini-graph-card
             entities:
-              - entity: sensor.master_sov_temperature
-                name: Temperatur
-                secondary_info: last-changed
-              - entity: sensor.master_sov_humidity
-                name: Fuktighet
-                secondary_info: last-changed
+              - sensor.master_sov_temperature
+            name: Temperatur
+            hours_to_show: 168
+            points_per_hour: 0.25
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.master_sov_humidity
+            name: Fuktighet
+            hours_to_show: 168
+            points_per_hour: 0.25
+

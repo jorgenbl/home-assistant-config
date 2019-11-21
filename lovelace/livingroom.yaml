@@ -1,0 +1,108 @@
+path: livingroom
+title: Stue
+icon: mdi:sofa
+panel: true
+cards:
+  - type: horizontal-stack # forces everything to fit in one row
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - type: custom:slider-entity-row
+                entity: light.stue_lys
+                name: Lys
+                toggle: true
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.netatmo_innesensor_temperature
+            name: Temperatur
+            hours_to_show: 168
+            points_per_hour: 0.25
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.netatmo_innesensor_humidity
+            name: Fuktighet
+            hours_to_show: 168
+            points_per_hour: 0.25
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.stue_romsensor
+            name: Stue Romsensor
+            hours_to_show: 168
+            points_per_hour: 0.25
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.stue_gulvsensor
+            name: Stue Gulvsensor
+            hours_to_show: 168
+            points_per_hour: 0.25
+      
+    
+      - type: vertical-stack
+        cards:
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.netatmo_innesensor_co2
+            name: CO2
+            hours_to_show: 168
+            points_per_hour: 0.25
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.netatmo_innesensor_pressure
+            name: Trykk
+            hours_to_show: 168
+            points_per_hour: 0.25
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.netatmo_innesensor_noise
+            name: Trykk
+            hours_to_show: 168
+            points_per_hour: 0.25
+
+    
+      - type: vertical-stack
+        cards:
+          - type: 'custom:mini-media-player'
+            entity: media_player.stue
+            icon: 'mdi:radio'
+            name: Stue Radio
+            info: true
+            show_progress: true
+            artwork: full-cover-fit
+            source: true
+          - artwork: cover
+            source: full
+            type: 'custom:mini-media-player'
+            entity: media_player.stue
+            hide:
+              controls: false
+              power: false
+              runtime: false
+              shuffle: false
+              volume: false
+            icon: 'mdi:radio'
+            info: scroll
+            name: Kjøkken Radio
+            shortcuts:
+              buttons:
+                - id: 'spotify:user:wzwick:playlist:3ijE8agDBSyIFenmtLEvEb'
+                  name: Alternative
+                  type: playlist
+                - id: 'spotify:user:wzwick:playlist:0ztMQWTqq8pM1ej5sf4lMn'
+                  name: 80s Music
+                  type: playlist
+                - artwork: cover
+                  id: 'spotify:user:wzwick:playlist:2QGULY3qVa3XfHibP4fjnC'
+                  name: Pop
+                  type: playlist
+                - id: 'spotify:user:mespouillel:playlist:3QDN29ZZPgozXzGgj8kbsR'
+                  name: Coffee House
+                  type: playlist
+                - id: 'spotify:user:spotify:playlist:37i9dQZF1DXdsy92d7BLpC'
+                  name: Weekend Vibes
+                  type: playlist
+                - id: 'spotify:user:11120601576:playlist:5RwKkyt7t8esOSVkP4J4Oz'
+                  name: UK Top 40 (Clean)
+                  type: playlist
+              columns: 3
