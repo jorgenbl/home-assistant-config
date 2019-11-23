@@ -63,46 +63,44 @@ cards:
     
       - type: vertical-stack
         cards:
-          - type: 'custom:mini-media-player'
-            entity: media_player.stue
-            icon: 'mdi:radio'
-            name: Stue Radio
-            info: true
-            show_progress: true
-            artwork: full-cover-fit
-            source: true
-          - artwork: cover
+          - type: 'custom:simple-thermostat'
+            entity: climate.stue_klimakontroll
+            step_size: 1
+          - artwork: full-cover-fit
             source: full
             type: 'custom:mini-media-player'
             entity: media_player.stue
             hide:
               controls: false
-              power: false
+              power: true
               runtime: false
               shuffle: false
               volume: false
             icon: 'mdi:radio'
             info: scroll
-            name: Kjøkken Radio
+            name: Stue
             shortcuts:
               buttons:
-                - id: 'spotify:user:wzwick:playlist:3ijE8agDBSyIFenmtLEvEb'
-                  name: Alternative
-                  type: playlist
-                - id: 'spotify:user:wzwick:playlist:0ztMQWTqq8pM1ej5sf4lMn'
-                  name: 80s Music
-                  type: playlist
-                - artwork: cover
-                  id: 'spotify:user:wzwick:playlist:2QGULY3qVa3XfHibP4fjnC'
-                  name: Pop
-                  type: playlist
-                - id: 'spotify:user:mespouillel:playlist:3QDN29ZZPgozXzGgj8kbsR'
-                  name: Coffee House
-                  type: playlist
-                - id: 'spotify:user:spotify:playlist:37i9dQZF1DXdsy92d7BLpC'
-                  name: Weekend Vibes
-                  type: playlist
-                - id: 'spotify:user:11120601576:playlist:5RwKkyt7t8esOSVkP4J4Oz'
-                  name: UK Top 40 (Clean)
-                  type: playlist
-              columns: 3
+                - id: script.turnon_tv
+                  icon: mdi:television-classic
+                  name: TV
+                  type: script
+                - id: script.turnon_livingroom_apple_tv
+                  icon: mdi:apple
+                  name: Apple TV
+                  type: script
+                - id: script.turnon_livingroom_chromecast
+                  icon: mdi:google-chrome
+                  name: Chromecast
+                  type: script
+                - id: script.turnoff_livingroom_tv
+                  icon: mdi:television-off
+                  name: Turn off
+                  type: script
+                - id: script.turnon_livingroom_tv2
+                  name: TV2
+                  type: script
+                - id: script.turnon_livingroom_nrksuper
+                  name: NRK Super
+                  type: script
+              columns: 4 # Max buttons per row

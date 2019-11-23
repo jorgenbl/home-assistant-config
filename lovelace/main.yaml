@@ -9,21 +9,46 @@ cards:
         cards:
           - type: horizontal-stack
             cards:
-              - entity: input_boolean.day
-                type: custom:button-card
+              - type: custom:button-card
+                entity: input_boolean.day
                 icon: mdi:weather-sunny
-                style:
-                  - padding: 8px
-              - entity: input_boolean.evening
-                type: custom:button-card
+                styles:
+                  icon:
+                    - color: >
+                        [[[
+                          if (entity.state == "on") return 'green';
+                          else return 'white';
+                        ]]]  
+              - type: custom:button-card
+                entity: input_boolean.evening
                 icon: mdi:weather-sunset
-                style:
-                  - padding: 8px
-              - entity: input_boolean.night
-                type: custom:button-card
+                styles:
+                  icon:
+                    - color: >
+                        [[[
+                          if (entity.state == "on") return 'green';
+                          else return 'white';
+                        ]]]
+              - type: custom:button-card
+                entity: input_boolean.night
                 icon: mdi:weather-night
-                style:
-                  - padding: 8px
+                styles:
+                  icon:
+                    - color: >
+                        [[[
+                          if (entity.state == "on") return 'green';
+                          else return 'white';
+                        ]]]
+              - type: custom:button-card
+                entity: input_boolean.away
+                icon: mdi:logout
+                styles:
+                  icon:
+                    - color: >
+                        [[[
+                          if (entity.state == "on") return 'green';
+                          else return 'white';
+                        ]]]
           - type: glance
             entities:
               - sensor.template_door_alarm
@@ -50,6 +75,12 @@ cards:
                 styles:
                   name:
                     - font-size: 10px
+                  icon:
+                    - color: >
+                        [[[
+                          if (entity.attributes.current_activity == "Watch TV") return 'green';
+                          else return 'white';
+                        ]]]               
               - type: custom:button-card
                 entity: remote.harmony_stue
                 name: Apple TV
@@ -63,6 +94,12 @@ cards:
                 styles:
                   name:
                     - font-size: 10px
+                  icon:
+                    - color: >
+                        [[[
+                          if (entity.attributes.current_activity == "Watch Apple TV") return 'green';
+                          else return 'white';
+                        ]]]  
               - type: custom:button-card
                 entity: remote.harmony_stue
                 name: Chromecast
@@ -76,6 +113,12 @@ cards:
                 styles:
                   name:
                     - font-size: 10px
+                  icon:
+                    - color: >
+                        [[[
+                          if (entity.attributes.current_activity == "Watch Chromecast") return 'green';
+                          else return 'white';
+                        ]]] 
               - type: custom:button-card
                 entity: remote.harmony_stue
                 name: "Off"
@@ -89,6 +132,12 @@ cards:
                 styles:
                   name:
                     - font-size: 10px
+                  icon:
+                    - color: >
+                        [[[
+                          if (entity.attributes.current_activity == "PowerOff") return 'green';
+                          else return 'white';
+                        ]]] 
           - type: custom:mini-media-player
             entity: media_player.stue
             hide:

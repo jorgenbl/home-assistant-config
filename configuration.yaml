@@ -37,5 +37,4 @@ frontend:
 
 group: !include groups.yaml
 automation: !include automations.yaml
-script: !include scripts.yaml
 sensor: !include_dir_merge_list sensors

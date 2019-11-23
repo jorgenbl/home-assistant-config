@@ -26,6 +26,11 @@ cards:
             hours_to_show: 168
             points_per_hour: 0.25
 
+      - type: vertical-stack
+        cards:
+          - type: 'custom:simple-thermostat'
+            entity: climate.kjokken_klimakontroll
+            step_size: 1
       
     
       - type: vertical-stack
