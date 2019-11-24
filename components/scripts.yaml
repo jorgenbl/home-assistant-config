@@ -31,6 +31,19 @@ script:
             - 8
           device: 'Get DVR'
           delay_secs: 4
+  turnon_livingroom_nrk:
+    sequence:
+      - service: remote.turn_on
+        entity_id: remote.harmony_stue
+        data_template:
+          activity: "Watch TV"
+      - service: remote.send_command
+        entity_id: remote.harmony_stue
+        data_template:
+          command:
+            - 1
+          device: 'Get DVR'
+          delay_secs: 4
   turnon_livingroom_apple_tv:
     sequence:
       - service: remote.turn_on
@@ -47,5 +60,31 @@ script:
     sequence:
       - service: remote.turn_on
         entity_id: remote.harmony_stue
+        data_template:
+          activity: "PowerOff"
+
+
+  turnon_basement_apple_tv:
+    sequence:
+      - service: remote.turn_on
+        entity_id: remote.harmony_kjeller
+        data_template:
+          activity: "Watch Apple TV"
+  turnon_basement_pc:
+    sequence:
+      - service: remote.turn_on
+        entity_id: remote.harmony_kjeller
+        data_template:
+          activity: "Watch PC"
+  turnon_basement_xbox:
+    sequence:
+      - service: remote.turn_on
+        entity_id: remote.harmony_kjeller
+        data_template:
+          activity: "Play Xbox One"
+  turnoff_livingroom_projector:
+    sequence:
+      - service: remote.turn_on
+        entity_id: remote.harmony_kjeller
         data_template:
           activity: "PowerOff"

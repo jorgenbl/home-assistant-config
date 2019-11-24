@@ -13,56 +13,6 @@ cards:
                 entity: light.stue_lys
                 name: Lys
                 toggle: true
-          - type: custom:mini-graph-card
-            entities:
-              - sensor.netatmo_innesensor_temperature
-            name: Temperatur
-            hours_to_show: 168
-            points_per_hour: 0.25
-          - type: custom:mini-graph-card
-            entities:
-              - sensor.netatmo_innesensor_humidity
-            name: Fuktighet
-            hours_to_show: 168
-            points_per_hour: 0.25
-          - type: custom:mini-graph-card
-            entities:
-              - sensor.stue_romsensor
-            name: Stue Romsensor
-            hours_to_show: 168
-            points_per_hour: 0.25
-          - type: custom:mini-graph-card
-            entities:
-              - sensor.stue_gulvsensor
-            name: Stue Gulvsensor
-            hours_to_show: 168
-            points_per_hour: 0.25
-      
-    
-      - type: vertical-stack
-        cards:
-          - type: custom:mini-graph-card
-            entities:
-              - sensor.netatmo_innesensor_co2
-            name: CO2
-            hours_to_show: 168
-            points_per_hour: 0.25
-          - type: custom:mini-graph-card
-            entities:
-              - sensor.netatmo_innesensor_pressure
-            name: Trykk
-            hours_to_show: 168
-            points_per_hour: 0.25
-          - type: custom:mini-graph-card
-            entities:
-              - sensor.netatmo_innesensor_noise
-            name: Trykk
-            hours_to_show: 168
-            points_per_hour: 0.25
-
-    
-      - type: vertical-stack
-        cards:
           - type: 'custom:simple-thermostat'
             entity: climate.stue_klimakontroll
             step_size: 1
@@ -103,4 +53,45 @@ cards:
                 - id: script.turnon_livingroom_nrksuper
                   name: NRK Super
                   type: script
+                - id: script.turnon_livingroom_nrk
+                  name: NRK
+                  type: script
               columns: 4 # Max buttons per row
+      
+    
+      - type: vertical-stack
+        cards:
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.netatmo_innesensor_temperature
+            name: Temperatur
+            hours_to_show: 168
+            points_per_hour: 0.25
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.netatmo_innesensor_humidity
+            name: Fuktighet
+            hours_to_show: 168
+            points_per_hour: 0.25
+
+    
+      - type: vertical-stack
+        cards:
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.netatmo_innesensor_co2
+            name: CO2
+            hours_to_show: 168
+            points_per_hour: 0.25
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.netatmo_innesensor_pressure
+            name: Trykk
+            hours_to_show: 168
+            points_per_hour: 0.25
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.netatmo_innesensor_noise
+            name: Støy
+            hours_to_show: 168
+            points_per_hour: 0.25

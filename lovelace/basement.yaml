@@ -1,0 +1,76 @@
+path: basement
+title: Kjeller
+icon: mdi:sofa
+panel: true
+cards:
+  - type: horizontal-stack # forces everything to fit in one row
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - type: custom:slider-entity-row
+                entity: light.kjeller
+                name: Lys
+                toggle: true
+          - type: 'custom:simple-thermostat'
+            entity: climate.kjeller_klimakontroll
+            step_size: 1
+      
+    
+      - type: vertical-stack
+        cards:
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.netatmo_kjeller_temperature
+            name: Temperatur
+            hours_to_show: 168
+            points_per_hour: 0.25
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.netatmo_kjeller_humidity
+            name: Fuktighet
+            hours_to_show: 168
+            points_per_hour: 0.25
+          - type: custom:mini-graph-card
+            entities:
+              - sensor.netatmo_kjeller_co2
+            name: CO2
+            hours_to_show: 168
+            points_per_hour: 0.25
+
+    
+      - type: vertical-stack
+        cards:
+          - artwork: full-cover-fit
+            source: full
+            type: 'custom:mini-media-player'
+            entity: media_player.rx_v779_d4e9f5
+            hide:
+              controls: false
+              power: false
+              runtime: false
+              shuffle: false
+              volume: false
+            icon: 'mdi:radio'
+            info: scroll
+            name: Kjeller
+            shortcuts:
+              buttons:
+                - id: script.turnon_basement_apple_tv
+                  icon: mdi:apple
+                  name: Apple TV
+                  type: script
+                - id: script.turnon_basement_xbox
+                  icon: mdi:xbox
+                  name: Xbox
+                  type: script
+                - id: script.turnon_basement_pc
+                  icon: mdi:laptop
+                  name: PC
+                  type: script
+                - id: script.turnoff_livingroom_projector
+                  icon: mdi:television-off
+                  name: Turn off
+                  type: script
+              columns: 4 # Max buttons per row

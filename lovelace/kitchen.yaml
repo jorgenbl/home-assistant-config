@@ -40,7 +40,7 @@ cards:
               - type: 'custom:mini-media-player'
                 entity: media_player.kjokken
                 icon: 'mdi:radio'
-                name: Kjøkken Radio
+                name: Kjøkken
                 info: true
                 show_progress: true
                 artwork: full-cover-fit
