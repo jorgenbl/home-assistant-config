@@ -1,0 +1,153 @@
+google_assistant:
+  project_id: homeassistant-221220
+  api_key: !secret ga_api_key
+  expose_by_default: false
+  entity_config:
+    climate.stue_klimakontroll:
+      name: Termostat
+      room: Stue
+      expose: true
+      aliases:
+        - Temperature
+        - Living Room Thermostat
+        - Living Room Temperature
+        - Temperatur stue
+        - Stuetemperatur
+    climate.kjokken_klimakontroll:
+      name: Termostat
+      room: Kjøkken
+      expose: true
+      aliases:
+        - Temperature
+        - Kitchen Thermostat
+        - Kitchen Temperature
+        - Temperatur kjøkken
+        - Kjøkkentemperatur
+    climate.bad_kjeller_klimakontroll:
+      name: Termostat
+      room: Bad Kjeller
+      expose: true
+      aliases:
+        - Temperature
+        - Bathroom Basement Thermostat
+        - Bathroom Basement Temperature
+        - Temperatur Bad Kjeller
+        - Kjellerbadtemperatur
+    climate.bad_2_etasje_klimakontroll:
+      name: Termostat
+      room: Bad 2 Etasje
+      expose: true
+      aliases:
+        - Temperature
+        - Bathroom 2nd Floor Thermostat
+        - Bad 2 Etasje Temperature
+        - Temperatur Bad 2 Etasje
+        - 2etasjebadtemperatur
+    climate.gang_1_etasje_klimakontroll:
+      name: Termostat
+      room: Gang 1 Etasje
+      expose: true
+      aliases:
+        - Temperature
+        - Hallway 1st Floor Thermostat
+        - Hallway 1st Floor Temperature
+        - Temperatur Gang 1 Etasje
+        - 1etasjegangtemperatur
+    climate.kjeller_klimakontroll:
+      name: Termostat
+      room: Kjeller
+      expose: true
+      aliases:
+        - Temperature
+        - Basement Thermostat
+        - Basement Temperature
+        - Temperatur Kjeller
+        - kjellertemperatur
+
+    sensor.soverom_b_j_temperature:
+      name: Temperatur
+      room: Soverom
+      expose: true
+      aliases:
+        - Soveroms temperatur
+    
+    light.stue_lys:
+      name: Lys
+      room: Stue
+      expose: true
+      aliases:
+        - Stuelys
+        - Lys Stue
+    light.kjokken_lys:
+      name: Lys
+      room: Kjøkken
+      expose: true
+      aliases:
+        - Kjøkkenlys
+        - Lys Kjøkken
+    light.soverom_b_j:
+      name: Lys
+      room: Soverom
+      expose: true
+      aliases:
+        - Soveromslys
+        - Lys Soverom
+    light.kjeller:
+      name: Lys
+      room: Kjeller
+      expose: true
+      aliases:
+        - Kjellerlys
+        - Lys Kjeller
+    light.soverom_m:
+      name: Lys
+      room: Soverom Madelen
+      expose: true
+      aliases:
+        - Soveromslys
+        - Lys Soverom Madelen
+
+    input_boolean.day:
+      name: Dagmodus
+      expose: true
+      aliases:
+        - Dag
+        - Dagslys
+        - Modus Dag
+    input_boolean.night:
+      name: Nattmodus
+      expose: true
+      aliases:
+        - Natt
+        - Nattlys
+        - Modus Natt
+    input_boolean.evening:
+      name: Kveldsmodus
+      expose: true
+      aliases:
+        - Kveld
+        - Kveldslys
+        - Modus Kveld
+
+    script.turnon_livingroom_tv2:
+      name: TV2
+      room: Stue
+      expose: true
+    script.turnon_livingroom_nrksuper:
+      name: NRK Super
+      room: Stue
+      expose: true
+      aliases:
+        - Super
+    script.turnon_livingroom_nrk:
+      name: NRK
+      room: Stue
+      expose: true
+
+    switch.projector:
+      name: Projector
+      room: Kjeller
+      expose: true
+      aliases:
+        - Prosjektor
+        - Apple TV Kjeller
