@@ -63,3 +63,13 @@
     entity_id: climate.bad_2_etasje_klimakontroll
     data_template:
       temperature: "{{ states('input_number.hvac_target_temp_bathroom_2ndfloor') }}"
+
+
+- alias: 'Set theme at startup'
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    service: frontend.set_theme
+    data:
+      name: midnight
