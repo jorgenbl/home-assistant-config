@@ -78,6 +78,13 @@ google_assistant:
       aliases:
         - Stuelys
         - Lys Stue
+    light.dice:
+      name: Dice Wall
+      room: Stue
+      expose: true
+      aliases:
+        - Dice
+        - Lys Dice
     light.kjokken_lys:
       name: Lys
       room: Kjøkken
@@ -85,6 +92,13 @@ google_assistant:
       aliases:
         - Kjøkkenlys
         - Lys Kjøkken
+    light.julelys:
+      name: JuleLys
+      room: Kjøkken
+      expose: true
+      aliases:
+        - Julelys
+        - Lys Jul
     light.soverom_b_j:
       name: Lys
       room: Soverom
@@ -104,8 +118,15 @@ google_assistant:
       room: Soverom Madelen
       expose: true
       aliases:
-        - Soveromslys
+        - Soveromslys Madlen
         - Lys Soverom Madelen
+    light.soverom_v:
+      name: Lys
+      room: Soverom Vilde
+      expose: true
+      aliases:
+        - Soveromslys Vilde
+        - Lys Soverom Vilde
 
     input_boolean.day:
       name: Dagmodus

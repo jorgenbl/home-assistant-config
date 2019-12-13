@@ -1,19 +1,6 @@
 light:
   - platform: template
     lights:
-      l_stue_dice_wall:
-        friendly_name: "Dice Wall"
-        turn_on:
-          service: input_boolean.turn_on
-          entity_id: input_boolean.l_stue_dice_wall
-        turn_off:
-          service: input_boolean.turn_off
-          entity_id: input_boolean.l_stue_dice_wall
-        set_level:
-          service: input_number.set_value
-          data_template:
-            value: "{{ brightness }}"
-            entity_id: input_number.l_stue_dice_wall
       l_stue_dice_left:
         friendly_name: "Dice Left"
         turn_on:
@@ -212,3 +199,9 @@ light:
       - light.l_stue_kjellergang
       - light.l_stue_tv
       - light.l_stue_peis
+
+  - platform: group
+    name: Dice
+    entities:
+      - light.l_stue_dice_left
+      - light.l_stue_dice_right

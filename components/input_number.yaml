@@ -1,7 +1,4 @@
 input_number:
-  l_stue_dice_wall:
-    min: 0
-    max: 255
   l_stue_dice_left:
     min: 0
     max: 255

@@ -34,7 +34,6 @@ input_boolean:
     initial: off
     icon: mdi:weather-sunset
 
-  l_stue_dice_wall:
   l_stue_dice_left:
   l_stue_dice_right:
   l_stue_tv:
