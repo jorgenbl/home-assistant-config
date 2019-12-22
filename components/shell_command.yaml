@@ -1,0 +1,3 @@
+shell_command:
+  vpn_on: echo $(/config/hass-secret vpngatewaypassword) | ssh -i /config/ssh-key -tt jorgenbl@$(/config/hass-secret vpngateway) "sudo ~/vpnon"
+  vpn_off: echo $(/config/hass-secret vpngatewaypassword) | ssh -i /config/ssh-key -tt jorgenbl@$(/config/hass-secret vpngateway) "sudo ~/vpnoff"

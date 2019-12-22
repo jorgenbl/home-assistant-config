@@ -198,11 +198,19 @@ cards:
           - type: custom:xiaomi-vacuum-card
             entity: vacuum.xiaomi_vacuum_cleaner
             name: false
-          - type: custom:button-card
-            entity: switch.julelys
-            icon: mdi:pine-tree
-            styles:
-              card:
-              - width: 100px
-              - height: 100px
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                entity: switch.julelys
+                icon: mdi:pine-tree
+                styles:
+                  card:
+                  - width: 100px
+                  - height: 100px
+              - type: custom:button-card
+                entity: input_boolean.vpn
+                styles:
+                  card:
+                  - width: 100px
+                  - height: 100px
 

@@ -27,3 +27,4 @@ node-red
 
 secrets.yaml
 known_devices.yaml
+ssh-key

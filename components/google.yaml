@@ -149,6 +149,12 @@ google_assistant:
         - Kveld
         - Kveldslys
         - Modus Kveld
+    input_boolean.vpn:
+      name: ExpressVPN
+      expose: true
+      aliases:
+        - VPN
+        - Expressvpn
 
     script.turnon_livingroom_tv2:
       name: TV2
