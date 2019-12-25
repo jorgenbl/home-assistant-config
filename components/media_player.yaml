@@ -1,0 +1,3 @@
+media_player:
+  - platform: yamaha
+    host: !secret yamaha_receiver_host

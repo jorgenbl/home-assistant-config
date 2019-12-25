@@ -45,7 +45,7 @@ cards:
           - artwork: full-cover-fit
             source: full
             type: 'custom:mini-media-player'
-            entity: media_player.rx_v779_d4e9f5
+            entity: media_player.yamaha_receiver
             hide:
               controls: false
               power: false
