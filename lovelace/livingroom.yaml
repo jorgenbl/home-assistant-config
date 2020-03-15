@@ -67,13 +67,13 @@ cards:
         cards:
           - type: custom:mini-graph-card
             entities:
-              - sensor.netatmo_innesensor_temperature
+              - sensor.netatmo_svaneveien_innesensor_temperature
             name: Temperatur
             hours_to_show: 168
             points_per_hour: 0.25
           - type: custom:mini-graph-card
             entities:
-              - sensor.netatmo_innesensor_humidity
+              - sensor.netatmo_svaneveien_innesensor_humidity
             name: Fuktighet
             hours_to_show: 168
             points_per_hour: 0.25
@@ -83,19 +83,19 @@ cards:
         cards:
           - type: custom:mini-graph-card
             entities:
-              - sensor.netatmo_innesensor_co2
+              - sensor.netatmo_svaneveien_innesensor_co2
             name: CO2
             hours_to_show: 168
             points_per_hour: 0.25
           - type: custom:mini-graph-card
             entities:
-              - sensor.netatmo_innesensor_pressure
+              - sensor.netatmo_svaneveien_innesensor_pressure
             name: Trykk
             hours_to_show: 168
             points_per_hour: 0.25
           - type: custom:mini-graph-card
             entities:
-              - sensor.netatmo_innesensor_noise
+              - sensor.netatmo_svaneveien_innesensor_noise
             name: Støy
             hours_to_show: 168
             points_per_hour: 0.25

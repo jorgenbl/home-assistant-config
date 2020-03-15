@@ -22,19 +22,19 @@ cards:
         cards:
           - type: custom:mini-graph-card
             entities:
-              - sensor.netatmo_kjeller_temperature
+              - sensor.netatmo_svaneveien_kjeller_temperature
             name: Temperatur
             hours_to_show: 168
             points_per_hour: 0.25
           - type: custom:mini-graph-card
             entities:
-              - sensor.netatmo_kjeller_humidity
+              - sensor.netatmo_svaneveien_kjeller_humidity
             name: Fuktighet
             hours_to_show: 168
             points_per_hour: 0.25
           - type: custom:mini-graph-card
             entities:
-              - sensor.netatmo_kjeller_co2
+              - sensor.netatmo_svaneveien_kjeller_co2
             name: CO2
             hours_to_show: 168
             points_per_hour: 0.25

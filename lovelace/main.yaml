@@ -152,22 +152,22 @@ cards:
           - type: entities
             show_header_toggle: false
             entities:
-              - entity: sensor.netatmo_ute_temperature
+              - entity: sensor.netatmo_svaneveien_ute_temperature
                 name: Ute
                 secondary_info: last-changed
-              - entity: sensor.netatmo_innesensor_temperature
+              - entity: sensor.netatmo_svaneveien_innesensor_temperature
                 name: Stue
                 secondary_info: last-changed
-              - entity: sensor.netatmo_kjeller_temperature
+              - entity: sensor.netatmo_svaneveien_kjeller_temperature
                 name: Kjeller
                 secondary_info: last-changed
               - entity: sensor.master_sov_temperature
                 name: Soverom
                 secondary_info: last-changed
-              - entity: sensor.netatmo_soverom_madelen_temperature
+              - entity: sensor.netatmo_svaneveien_soverom_madelen_temperature
                 name: Soverom Madelen
                 secondary_info: last-changed
-              - entity: sensor.netatmo_soverom_vilde_temperature
+              - entity: sensor.netatmo_svaneveien_soverom_vilde_temperature
                 name: Soverom Vilde
                 secondary_info: last-changed
           - type: custom:weather-card

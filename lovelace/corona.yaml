@@ -1,0 +1,36 @@
+path: corona
+title: Coronavirus
+icon: mdi:heart-pulse
+panel: true
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: custom:mini-graph-card
+        entities:
+          - entity: sensor.norway_coronavirus_confirmed
+        name: Coronavirus smittede
+        hours_to_show: 168
+        points_per_hour: 0.25
+        hour24: true
+        show:
+          graph: bar
+          labels: true
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.norway_coronavirus_deaths
+        name: Coronavirus dødsfall
+        hours_to_show: 168
+        points_per_hour: 0.25
+        hour24: true
+        show:
+          labels: true
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.norway_coronavirus_recovered
+        name: Coronavirus friske
+        hours_to_show: 168
+        points_per_hour: 0.25
+        hour24: true
+        show:
+          labels: true
+

@@ -37,3 +37,5 @@ views:
   - !include lovelace/bedroom_madelen.yaml
   - !include lovelace/bedroom_vilde.yaml
   - !include lovelace/office.yaml
+  - !include lovelace/corona.yaml
+  - !include lovelace/corona2.yaml

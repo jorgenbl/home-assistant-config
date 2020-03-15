@@ -1,0 +1,9 @@
+path: corona2
+title: Coronavirus
+icon: mdi:heart-pulse
+panel: true
+cards:
+  - aspect_ratio: 100%
+    type: iframe
+    url: >-
+      https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6

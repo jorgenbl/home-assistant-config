@@ -19,12 +19,12 @@ cards:
           - type: entities
             show_header_toggle: false
             entities:
-              - entity: sensor.netatmo_soverom_madelen_temperature
+              - entity: sensor.netatmo_svaneveien_soverom_madelen_temperature
                 name: Temperatur
                 secondary_info: last-changed
-              - entity: sensor.netatmo_soverom_madelen_humidity
+              - entity: sensor.netatmo_svaneveien_soverom_madelen_humidity
                 name: Fuktighet
                 secondary_info: last-changed
-              - entity: sensor.netatmo_soverom_madelen_co2
+              - entity: sensor.netatmo_svaneveien_soverom_madelen_co2
                 name: CO2
                 secondary_info: last-changed  
