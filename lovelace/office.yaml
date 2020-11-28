@@ -13,9 +13,48 @@ cards:
                 entity: light.kontor
                 name: Lys
                 toggle: true
-    
-      - type: vertical-stack
-        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:button-card
+                entity: switch.10130087600194d1e38a_1
+                icon: mdi:printer-3d
+                name: 3D Printer
+                styles:
+                  card:
+                  - width: 100px
+                  - height: 100px
+              - type: custom:button-card
+                entity: switch.octoprint_connector
+                icon: mdi:lan-connect
+                styles:
+                  card:
+                  - width: 100px
+                  - height: 100px   
+              - type: custom:button-card
+                entity: switch.10130087600194d1e38a_3
+                icon: mdi:floor-lamp
+                name: Lys
+                styles:
+                  card:
+                  - width: 100px
+                  - height: 100px
+              - type: custom:button-card
+                entity: switch.10130087600194d1e38a_7
+                icon: mdi:usb
+                name: USB hub
+                styles:
+                  card:
+                  - width: 100px
+                  - height: 100px
+              - type: custom:button-card
+                entity: switch.10130087600194d1e38a_2
+                icon: mdi:printer
+                name: Skriver
+                styles:
+                  card:
+                  - width: 100px
+                  - height: 100px    
+  
           - type: entities
             show_header_toggle: false
             entities:
@@ -25,3 +64,24 @@ cards:
               - entity: sensor.kontor_humidity
                 name: Fuktighet
                 secondary_info: last-changed
+              - entity: cover.tradfri_blind
+                name: Gardiner
+    
+      - type: vertical-stack
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.octoprint_current_state
+              - entity: sensor.octoprint_job_percentage
+              - entity: sensor.octoprint_actual_bed_temp
+              - entity: sensor.octoprint_target_bed_temp
+              - entity: sensor.octoprint_actual_tool0_temp
+              - entity: sensor.octoprint_target_tool0_temp
+          - type: picture-glance
+            camera_image: camera.octoprint
+            camera_view: live
+            entities:
+              - entity: switch.10130087600194d1e38a_3
+                icon: mdi:floor-lamp
+              - entity: switch.10130087600194d1e38a_1
+                icon: mdi:printer-3d

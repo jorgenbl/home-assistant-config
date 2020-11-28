@@ -1,32 +1,38 @@
 title: Hjemme
 
 resources:
-  - url: /community_plugin/weather-card/weather-card.js
+  - url: /hacsfiles/weather-card/weather-card.js
     type: module
-  - url: /community_plugin/button-card/button-card.js
+  - url: /hacsfiles/button-card/button-card.js
     type: module
-  - url: /community_plugin/simple-thermostat/simple-thermostat.js
+  - url: /hacsfiles/simple-thermostat/simple-thermostat.js
     type: module
-  - url: /community_plugin/lovelace-xiaomi-vacuum-card/xiaomi-vacuum-card.js
+  - url: /hacsfiles/lovelace-xiaomi-vacuum-card/xiaomi-vacuum-card.js
     type: js
-  - url: /community_plugin/mini-media-player/mini-media-player-bundle.js
+  - url: /hacsfiles/mini-media-player/mini-media-player-bundle.js
     type: module
-  - url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
+  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
     type: module
-  - url: /community_plugin/lovelace-slider-entity-row/slider-entity-row.js
+  - url: /hacsfiles/lovelace-slider-entity-row/slider-entity-row.js
     type: module
-  - url: /community_plugin/lovelace-layout-card/layout-card.js
+  - url: /hacsfiles/lovelace-layout-card/layout-card.js
     type: module
-  - url: /community_plugin/custom-header/custom-header.js
-    type: module
-  - url: /community_plugin/lovelace-swipe-navigation/swipe-navigation.js
+  - url: /hacsfiles/lovelace-swipe-navigation/swipe-navigation.js
     type: js
+  - url: /hacsfiles/kiosk-mode/kiosk-mode.js
+    type: module
+  - url: /hacsfiles/lovelace-card-mod/card-mod.js
+    type: module
 
-custom_header:
-  compact_mode: true
-  background: transparent url("https://goo.gl/M3Dsf2")
-  disable_sidebar: true
-  options_hide: true
+#custom_header:
+#  compact_mode: true
+#  tab_icons_and_text: true
+#  background: transparent url("https://goo.gl/M3Dsf2")
+#  background: 'rgba(0, 0, 0, 0.0)'
+#  disable_sidebar: true
+#  options_hide: true
+
+
 
 views:
   - !include lovelace/main.yaml
@@ -37,5 +43,5 @@ views:
   - !include lovelace/bedroom_madelen.yaml
   - !include lovelace/bedroom_vilde.yaml
   - !include lovelace/office.yaml
-  - !include lovelace/corona.yaml
-  - !include lovelace/corona2.yaml
+  #- !include lovelace/corona.yaml
+  #- !include lovelace/corona2.yaml

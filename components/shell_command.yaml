@@ -1,3 +1,5 @@
 shell_command:
   vpn_on: echo $(/config/hass-secret vpngatewaypassword) | ssh -i /config/ssh-key -tt jorgenbl@$(/config/hass-secret vpngateway) "sudo ~/vpnon"
   vpn_off: echo $(/config/hass-secret vpngatewaypassword) | ssh -i /config/ssh-key -tt jorgenbl@$(/config/hass-secret vpngateway) "sudo ~/vpnoff"
+  octoprint_connect: 'curl -s http://$(/config/hass-secret octoprint_host)/api/connection -d "{\"command\":\"connect\"}" -H "Content-Type: application/json" -H "X-Api-Key: $(/config/hass-secret octoprint_api)"'
+  octoprint_disconnect: 'curl -s http://$(/config/hass-secret octoprint_host)/api/connection -d "{\"command\":\"disconnect\"}" -H "Content-Type: application/json" -H "X-Api-Key: $(/config/hass-secret octoprint_api)"'

@@ -51,12 +51,13 @@ cards:
                         ]]]
           - type: glance
             entities:
-              - sensor.template_door_alarm
               - sensor.template_magnet_door_main
+              - sensor.template_magnet_door_basement_main
               - sensor.template_magnet_door_basement
               - sensor.template_magnet_door_livingroom
           - type: glance
             entities:
+              - sensor.template_door_alarm
               - sensor.template_magnet_window_kitchen_left
               - sensor.template_magnet_window_kitchen_right
               - sensor.template_magnet_window_livingroom
@@ -171,7 +172,7 @@ cards:
                 name: Soverom Vilde
                 secondary_info: last-changed
           - type: custom:weather-card
-            entity: weather.hjemme
+            entity: weather.metsvaneveien
 
 
       - type: vertical-stack

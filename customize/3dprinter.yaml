@@ -1,0 +1,23 @@
+sensor.octoprint_current_state:
+  friendly_name: Status
+  icon: mdi:printer-3d
+
+sensor.octoprint_job_percentage:
+  friendly_name: "Job %"
+  icon: mdi:percent
+
+sensor.octoprint_target_bed_temp:
+  friendly_name: "Bed Temp (target)"
+  icon: mdi:vector-square
+
+sensor.octoprint_actual_bed_temp:
+  friendly_name: "Bed Temp (actual)"
+  icon: mdi:vector-square
+
+sensor.octoprint_actual_tool0_temp:
+  friendly_name: "Tool Temp (actual)"
+  icon: mdi:temperature-celsius
+
+sensor.octoprint_target_tool0_temp:
+  friendly_name: "Tool Temp (target)"
+  icon: mdi:temperature-celsius

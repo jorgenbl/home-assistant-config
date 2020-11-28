@@ -33,3 +33,13 @@
             - switch.julestjerne_venstre
             - switch.julestjerne_stue
             - switch.juletre_mini
+
+- platform: template
+  switches:
+    octoprint_connector:
+      friendly_name: "Connect Octoprint"
+      value_template: "{{ not is_state('sensor.octoprint_current_state', 'unknown') }}"
+      turn_on:
+        service: shell_command.octoprint_connect
+      turn_off:
+        service: shell_command.octoprint_disconnect

@@ -1,20 +1,5 @@
 sensor:
 
-  # Weather prediction
-
-  - platform: yr
-    monitored_conditions:
-      - symbol
-
-  # Ring Doorbel
-  - platform: ring
-    monitored_conditions:
-      - battery
-      - last_activity
-      - last_ding
-      - last_motion
-      - volume
-
   # Logicmachine via mqtt
 
   # KNX Temperatures

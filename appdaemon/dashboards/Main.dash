@@ -1,0 +1,27 @@
+#
+# Main arguments, all optional
+#
+title: Kontor Panel
+widget_dimensions: [120, 120]
+widget_margins: [5, 5]
+columns: 8
+
+label:
+    widget_type: label
+    text: Hello World
+    
+office_room_blinds_open:
+    title: "Blinds"
+    widget_type: cover
+    entity: cover.tradfri_blind
+    icon_on: mdi-weather-sunset-down
+    icon_off: mdi-weather-sunset-down
+
+office_room_blinds_close:
+    title: "Blinds"
+    widget_type: switch
+    entity: switch.close_blinds
+    icon_on: mdi-weather-sunset-up
+    icon_off: mdi-weather-sunset-up
+layout:
+    - label(2x2), cover.tradfri_blind, office_room_blinds_open
